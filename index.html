@@ -1,1 +1,110 @@
-invariant ost
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invariant OST</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .player-container {
+            width: 100%;
+            max-width: 400px;
+            background: #1e1e1e;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+        .qr-box {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 16px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        .qr-box img {
+            width: 180px;
+            height: 180px;
+            display: block;
+        }
+        .tracklist {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .track-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .track-row:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .album-art {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 6px;
+        }
+        .track-meta h4 { margin: 0; font-size: 14px; }
+        .track-meta p { margin: 4px 0 0 0; font-size: 12px; color: #b3b3b3; }
+        .track-duration { font-size: 13px; color: #b3b3b3; }
+    </style>
+</head>
+<body>
+
+<div class="player-container">
+    <h2>INVARIANT OST</h2>
+    <p style="color: #b3b3b3; font-size: 14px;">Scan to open playlist</p>
+    
+    <!-- QR Code Section -->
+    <div class="qr-box">
+        <!-- Replace with your actual generated QR code image file -->
+        <img src="your-qr-code.png" alt="QR Code">
+    </div>
+
+    <!-- Playlist Tracks -->
+    <div class="tracklist">
+        <div class="track-row">
+            <div class="track-info">
+                <div class="album-art"></div>
+                <div class="track-meta">
+                    <h4>Track Title One</h4>
+                    <p>Artist Name</p>
+                </div>
+            </div>
+            <div class="track-duration">3:24</div>
+        </div>
+        
+        <div class="track-row">
+            <div class="track-info">
+                <div class="album-art"></div>
+                <div class="track-meta">
+                    <h4>Track Title Two</h4>
+                    <p>Artist Name</p>
+                </div>
+            </div>
+            <div class="track-duration">4:02</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
