@@ -127,14 +127,15 @@
 
     /* ── QR BLOCK ─────────────────────────────────── */
     .qr-block {
-      margin-top: 56px;
+      margin: 56px auto 0;
       width: 100%;
       max-width: 780px;
       display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 32px;
+      gap: 64px;
       animation: fadeUp 1.4s 0.3s ease both;
     }
 
@@ -145,10 +146,11 @@
       gap: 14px;
       text-decoration: none;
       color: inherit;
+      margin: 0 auto;
     }
 
     .qr-frame {
-      width: min(280px, 64vw);
+      width: clamp(140px, 40vw, 280px);
       aspect-ratio: 1 / 1;
 
       border: 1px solid var(--amber);
@@ -160,7 +162,7 @@
     }
 
     .qr-frame.spotify {
-      width: min(420px, 78vw);
+      width: clamp(200px, 60vw, 420px);
       aspect-ratio: 21 / 9;
     }
 
