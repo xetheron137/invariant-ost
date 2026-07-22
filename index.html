@@ -3,34 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INVARIANT — Unofficial Soundtrack</title>
+  <title>INVARIANT — Unofficial Soundtrack (Merriweather test)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
- <link rel="icon" type="image/svg+xml" href="qr-code.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&family=Inter:wght@300;400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
 
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5206HXD98"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z5206HXD98');
-</script>
-
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xe4yrzsy5t");
-</script>
-  
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    
+
     :root {
       --ink:       #E2DDD5;
       --ink-muted: #8A8278;
@@ -39,7 +19,6 @@
       --bg-deep:   #07070C;
     }
 
-   
     html { scroll-behavior: smooth; }
 
     body {
@@ -51,160 +30,6 @@
       overflow-x: hidden;
     }
 
-    /* ── HERO ─────────────────────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 24px 80px;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('invariant-bg.jpg') center center / cover no-repeat;
-      z-index: 0;
-    }
-
-    
-    /* two-layer overlay: deep vignette + uniform dim — lets the grain breathe */
-    .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at center, rgba(7,7,12,0.52) 0%, rgba(7,7,12,0.88) 100%),
-        linear-gradient(rgba(7,7,12,0.30), rgba(7,7,12,0.30));
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      animation: fadeUp 1.4s ease both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .eyebrow {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 18px;
-    }
-
-    .title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(64px, 14vw, 128px);
-      font-weight: 300;
-      letter-spacing: 0.22em;
-       margin-right: -0.22em;
-      line-height: 1;
-      color: var(--ink);
-      text-transform: uppercase;
-    }
-
-    .subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(13px, 2vw, 16px);
-      font-style: italic;
-      font-weight: 300;
-      color: var(--ink-muted);
-      letter-spacing: 0.12em;
-      margin-top: 12px;
-    }
-
-    /* ── QR BLOCK ─────────────────────────────────── */
-    .qr-block {
-      margin: 56px auto 0;
-      width: 100%;
-      max-width: 780px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 64px;
-      animation: fadeUp 1.4s 0.3s ease both;
-    }
-
-    .qr-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: inherit;
-      margin: 0 auto;
-    }
-
-    .qr-frame {
-      width: clamp(140px, 40vw, 280px);
-      aspect-ratio: 1 / 1;
-
-      border: 1px solid var(--amber);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(7,7,12,0.6);
-    }
-
-    .qr-frame.spotify {
-      width: clamp(200px, 60vw, 420px);
-      aspect-ratio: 21 / 9;
-    }
-
-    /* corner marks — signature element */
-    .qr-frame::before,
-    .qr-frame::after {
-      content: '';
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      border-color: var(--amber);
-      border-style: solid;
-    }
-    .qr-frame::before { top: -4px; left: -4px; border-width: 2px 0 0 2px; }
-    .qr-frame::after  { bottom: -4px; right: -4px; border-width: 0 2px 2px 0; }
-
-    .qr-inner {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    /* placeholder QR SVG */
-    .qr-inner svg {
-      width: 100%;
-      height: 100%;
-      opacity: 0.55;
-    }
-
-    .qr-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-    }
-
-    /* ── TRACKLIST SECTION ────────────────────────── */
     .tracklist {
       max-width: 720px;
       margin: 0 auto;
@@ -229,9 +54,7 @@
       background: var(--line);
     }
 
-    .chapter {
-      margin-bottom: 44px;
-    }
+    .chapter { margin-bottom: 44px; }
 
     .chapter-header {
       display: flex;
@@ -279,31 +102,29 @@
     .track:hover { border-color: rgba(196,160,112,0.22); }
 
     .track-num {
-      position: absolute;
-      left: -56px;
-      top: 8px;
-      width: 32px;
-      text-align: right;
+      position: static;
+      display: inline-block;
+      width: auto;
+      text-align: left;
+      margin-right: 10px;
       font-family: 'Space Mono', monospace;
       font-size: 10px;
       color: var(--ink-muted);
     }
 
-    @media (max-width: 900px) {
-      .track-num {
-        position: static;
-        display: inline-block;
-        width: auto;
-        text-align: left;
-        margin-right: 10px;
-      }
-    }
-
+    /* ── TEST: Merriweather applied to track names ── */
     .track-name {
-      font-size: 14px;
+      font-family: 'Merriweather', serif;
+      font-size: 13.5px;
       font-weight: 300;
       color: var(--ink);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.01em;
+    }
+
+    .track-name em {
+      font-size: 11px;
+      color: var(--ink-muted);
+      font-style: italic;
     }
 
     .track-ts {
@@ -313,99 +134,13 @@
       flex-shrink: 0;
       margin-left: 20px;
     }
-
-    /* pre/post book */
-    .chapter.pre .chapter-num,
-    .chapter.post .chapter-num { color: var(--ink-muted); }
-
-    /* ── FOOTER ───────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 32px 24px 48px;
-      border-top: 1px solid var(--line);
-    }
-    footer p {
-      font-family: 'Space Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      line-height: 2;
-    }
-
- @media (max-width: 480px) {
-  .title {
-    font-size: 15vw;
-    letter-spacing: 0.1em;
-  }
-  .track-name { font-size: 13px; }
-}
-
-.hero {
-  overflow: hidden;
-}
-
-
-
-.amazon-block {
-  text-align: center;
-  padding: 48px 24px 64px;
-}
-
-.amazon-block img {
-  width: 180px;
-  opacity: 0.85;
-  transition: opacity 0.2s;
-}
-
-.amazon-block img:hover {
-  opacity: 1;
-}
-
-
-
-    
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <p class="eyebrow">Unofficial Soundtrack, Curated by Aetheron</p>
-      
-      <h1 class="title">Invariant</h1>
-     <p class="subtitle">Listen at your own discretion</p>
-
-      <div class="qr-block">
-        <a href="https://open.spotify.com/playlist/2J7tZwUP3QdDUOzbe0DvQL" class="qr-item">
-          <div class="qr-frame">
-            <div class="qr-inner">
-              <img src="qr-spotify.svg" alt="Scan QR code to listen" style="width:100%;height:100%;object-fit:contain;" />
-            </div>
-          </div>
-          <p class="qr-label">Scan QR</p>
-        </a>
-
-        <a href="https://open.spotify.com/playlist/2J7tZwUP3QdDUOzbe0DvQL" class="qr-item">
-          <div class="qr-frame spotify">
-            <div class="qr-inner">
-              <img src="spcode-2J7tZwUP3QdDUOzbe0DvQL.jpeg" alt="Scan Spotify Code to listen" style="width:100%;height:100%;object-fit:contain;" />
-            </div>
-          </div>
-          <p class="qr-label">Scan on Spotify</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
- 
-  <!-- TRACKLIST -->
   <section class="tracklist">
-    <p class="section-label">Full Soundtrack</p>
- 
-    <!-- CH1 -->
+    <p class="section-label">Full Soundtrack — Merriweather Test</p>
+
     <div class="chapter">
       <div class="chapter-header">
         <span class="chapter-num">CH 01</span>
@@ -414,23 +149,22 @@
       <ul class="track-list">
         <li class="track">
           <span class="track-num">01</span>
-          <span class="track-name">In The Face Of Evil <em style="font-size:11px;color:var(--ink-muted)">Magic Sword</em></span>
+          <span class="track-name">In The Face Of Evil <em>Magic Sword</em></span>
           <span class="track-ts">0:00</span>
         </li>
         <li class="track">
           <span class="track-num">02</span>
-          <span class="track-name">Infraliminal <em style="font-size:11px;color:var(--ink-muted)">REZZMAU5, deadmau5, Rezz</em></span>
+          <span class="track-name">Infraliminal <em>REZZMAU5, deadmau5, Rezz</em></span>
           <span class="track-ts">6:49</span>
         </li>
         <li class="track">
           <span class="track-num">03</span>
-          <span class="track-name">monophobia - ov <em style="font-size:11px;color:var(--ink-muted)">deadmau5 — OV</em></span>
+          <span class="track-name">monophobia - ov <em>deadmau5 — OV</em></span>
           <span class="track-ts">11:15</span>
         </li>
       </ul>
     </div>
- 
-    <!-- CH2 -->
+
     <div class="chapter">
       <div class="chapter-header">
         <span class="chapter-num">CH 02</span>
@@ -439,28 +173,27 @@
       <ul class="track-list">
         <li class="track">
           <span class="track-num">04</span>
-          <span class="track-name">Ayr <em style="font-size:11px;color:var(--ink-muted)">BICEP</em></span>
+          <span class="track-name">Ayr <em>BICEP</em></span>
           <span class="track-ts">16:53</span>
         </li>
         <li class="track">
           <span class="track-num">05</span>
-          <span class="track-name">Adagio For Strings <em style="font-size:11px;color:var(--ink-muted)">Tiësto — diegetic</em></span>
+          <span class="track-name">Adagio For Strings <em>Tiësto — diegetic</em></span>
           <span class="track-ts">21:55</span>
         </li>
         <li class="track">
           <span class="track-num">06</span>
-          <span class="track-name">Adagio For Piano <em style="font-size:11px;color:var(--ink-muted)">Joe Hume</em></span>
+          <span class="track-name">Adagio For Piano <em>Joe Hume</em></span>
           <span class="track-ts">29:18</span>
         </li>
         <li class="track">
           <span class="track-num">07</span>
-          <span class="track-name">Ayaya <em style="font-size:11px;color:var(--ink-muted)">BICEP</em></span>
+          <span class="track-name">Ayaya <em>BICEP</em></span>
           <span class="track-ts">33:25</span>
         </li>
       </ul>
     </div>
- 
-    <!-- CH3 -->
+
     <div class="chapter">
       <div class="chapter-header">
         <span class="chapter-num">CH 03</span>
@@ -469,370 +202,23 @@
       <ul class="track-list">
         <li class="track">
           <span class="track-num">08</span>
-          <span class="track-name">Errors In My Bread <em style="font-size:11px;color:var(--ink-muted)">deadmau5</em></span>
+          <span class="track-name">Errors In My Bread <em>deadmau5</em></span>
           <span class="track-ts">37:01</span>
         </li>
         <li class="track">
           <span class="track-num">09</span>
-          <span class="track-name">Program <em style="font-size:11px;color:var(--ink-muted)">Noisia &amp; Phace</em></span>
+          <span class="track-name">Program <em>Noisia &amp; Phace</em></span>
           <span class="track-ts">42:18</span>
         </li>
         <li class="track">
           <span class="track-num">10</span>
-          <span class="track-name">Collider <em style="font-size:11px;color:var(--ink-muted)">Noisia — diegetic</em></span>
+          <span class="track-name">Collider <em>Noisia — diegetic</em></span>
           <span class="track-ts">47:35</span>
         </li>
       </ul>
     </div>
- 
-    <!-- INTERLUDE -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">INT</span>
-        <span class="chapter-name">Interlude</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">11</span>
-          <span class="track-name">Master Assassin <em style="font-size:11px;color:var(--ink-muted)">Jesper Kyd</em></span>
-          <span class="track-ts">52:21</span>
-        </li>
-        <li class="track">
-          <span class="track-num">12</span>
-          <span class="track-name">Roman Underworld <em style="font-size:11px;color:var(--ink-muted)">Jesper Kyd</em></span>
-          <span class="track-ts">55:42</span>
-        </li>
-        <li class="track">
-          <span class="track-num">13</span>
-          <span class="track-name">Sanctuary <em style="font-size:11px;color:var(--ink-muted)">Jesper Kyd</em></span>
-          <span class="track-ts">59:28</span>
-        </li>
-        <li class="track">
-          <span class="track-num">14</span>
-          <span class="track-name">Hideout <em style="font-size:11px;color:var(--ink-muted)">Jesper Kyd</em></span>
-          <span class="track-ts">63:34</span>
-        </li>
-        <li class="track">
-          <span class="track-num">15</span>
-          <span class="track-name">Imaginary Friends <em style="font-size:11px;color:var(--ink-muted)">deadmau5 — OV</em></span>
-          <span class="track-ts">66:15</span>
-        </li>
-        <li class="track">
-          <span class="track-num">16</span>
-          <span class="track-name">Imaginary Friends <em style="font-size:11px;color:var(--ink-muted)">deadmau5</em></span>
-          <span class="track-ts">67:58</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- CH5 -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">CH 05</span>
-        <span class="chapter-name">Cracking The Abzu Story</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">17</span>
-          <span class="track-name">Terrors In My Head <em style="font-size:11px;color:var(--ink-muted)">deadmau5</em></span>
-          <span class="track-ts">75:45</span>
-        </li>
-        <li class="track">
-          <span class="track-num">18</span>
-          <span class="track-name">What Came Before <em style="font-size:11px;color:var(--ink-muted)">Lorne Balfe</em></span>
-          <span class="track-ts">84:22</span>
-        </li>
-        <li class="track">
-          <span class="track-num">19</span>
-          <span class="track-name">Rlyehs Lament <em style="font-size:11px;color:var(--ink-muted)">deadmau5</em></span>
-          <span class="track-ts">88:33</span>
-        </li>
-        <li class="track">
-          <span class="track-num">20</span>
-          <span class="track-name">Ira <em style="font-size:11px;color:var(--ink-muted)">deadmau5</em></span>
-          <span class="track-ts">93:22</span>
-        </li>
-        <li class="track">
-          <span class="track-num">21</span>
-          <span class="track-name">luxuria - ov <em style="font-size:11px;color:var(--ink-muted)">deadmau5 — OV</em></span>
-          <span class="track-ts">96:01</span>
-        </li>
-        <li class="track">
-          <span class="track-num">22</span>
-          <span class="track-name">Lido <em style="font-size:11px;color:var(--ink-muted)">BICEP</em></span>
-          <span class="track-ts">99:23</span>
-        </li>
-        <li class="track">
-          <span class="track-num">23</span>
-          <span class="track-name">Superbia <em style="font-size:11px;color:var(--ink-muted)">deadmau5</em></span>
-          <span class="track-ts">102:43</span>
-        </li>
-        <li class="track">
-          <span class="track-num">24</span>
-          <span class="track-name">unjaded - ov <em style="font-size:11px;color:var(--ink-muted)">deadmau5 — OV</em></span>
-          <span class="track-ts">104:57</span>
-        </li>
-        <li class="track">
-          <span class="track-num">25</span>
-          <span class="track-name">Invidia <em style="font-size:11px;color:var(--ink-muted)">deadmau5</em></span>
-          <span class="track-ts">108:30</span>
-        </li>
-        <li class="track">
-          <span class="track-num">26</span>
-          <span class="track-name">VR Room <em style="font-size:11px;color:var(--ink-muted)">Jesper Kyd</em></span>
-          <span class="track-ts">111:47</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- CH6 -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">CH 06</span>
-        <span class="chapter-name">First Contact</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">27</span>
-          <span class="track-name">Smack My Bitch Up (Noisia Remix) <em style="font-size:11px;color:var(--ink-muted)">The Prodigy, Noisia Remix — pause here, listen</em></span>
-          <span class="track-ts">114:31</span>
-        </li>
-        <li class="track">
-          <span class="track-num">28</span>
-          <span class="track-name">monophobia - ov <em style="font-size:11px;color:var(--ink-muted)">deadmau5 — OV</em></span>
-          <span class="track-ts">120:24</span>
-        </li>
-        <li class="track">
-          <span class="track-num">29</span>
-          <span class="track-name">Mantra <em style="font-size:11px;color:var(--ink-muted)">Noisia</em></span>
-          <span class="track-ts">126:02</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- CH7 -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">CH 07</span>
-        <span class="chapter-name">Consequence</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">30</span>
-          <span class="track-name">Glue <em style="font-size:11px;color:var(--ink-muted)">BICEP</em></span>
-          <span class="track-ts">129:51</span>
-        </li>
-        <li class="track">
-          <span class="track-num">31</span>
-          <span class="track-name">Drift <em style="font-size:11px;color:var(--ink-muted)">BICEP</em></span>
-          <span class="track-ts">134:20</span>
-        </li>
-        <li class="track">
-          <span class="track-num">32</span>
-          <span class="track-name">İrtifa Kaybı - Re-Mastered <em style="font-size:11px;color:var(--ink-muted)">Kolera</em></span>
-          <span class="track-ts">139:15</span>
-        </li>
-        <li class="track">
-          <span class="track-num">33</span>
-          <span class="track-name">Access the Animus <em style="font-size:11px;color:var(--ink-muted)">Jesper Kyd</em></span>
-          <span class="track-ts">143:43</span>
-        </li>
-        <li class="track">
-          <span class="track-num">34</span>
-          <span class="track-name">City of Rome <em style="font-size:11px;color:var(--ink-muted)">Jesper Kyd</em></span>
-          <span class="track-ts">153:24</span>
-        </li>
-        <li class="track">
-          <span class="track-num">35</span>
-          <span class="track-name">Echoes of the Roman Ruins <em style="font-size:11px;color:var(--ink-muted)">Jesper Kyd</em></span>
-          <span class="track-ts">158:58</span>
-        </li>
-        <li class="track">
-          <span class="track-num">36</span>
-          <span class="track-name">Avaritia <em style="font-size:11px;color:var(--ink-muted)">deadmau5 — OV</em></span>
-          <span class="track-ts">161:46</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- CH8 -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">CH 08</span>
-        <span class="chapter-name">Confrontation</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">37</span>
-          <span class="track-name">Nova <em style="font-size:11px;color:var(--ink-muted)">Noisia, Camo &amp; Krooked</em></span>
-          <span class="track-ts">168:29</span>
-        </li>
-        <li class="track">
-          <span class="track-num">38</span>
-          <span class="track-name">Opal - Four Tet Remix <em style="font-size:11px;color:var(--ink-muted)">BICEP, Four Tet Remix</em></span>
-          <span class="track-ts">173:05</span>
-        </li>
-        <li class="track">
-          <span class="track-num">39</span>
-          <span class="track-name">Sundial <em style="font-size:11px;color:var(--ink-muted)">BICEP</em></span>
-          <span class="track-ts">181:19</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- CH9 -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">CH 09</span>
-        <span class="chapter-name">Re-Jaded Convergence</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">40</span>
-          <span class="track-name">Souk - Vertigo's Blissed-Out Sunset Mix <em style="font-size:11px;color:var(--ink-muted)">Jay C, Felix Baumgartner — Vertigo's Blissed-Out Sunset Mix</em></span>
-          <span class="track-ts">185:55</span>
-        </li>
-        <li class="track">
-          <span class="track-num">41</span>
-          <span class="track-name">Sixtyniner <em style="font-size:11px;color:var(--ink-muted)">Boards of Canada</em></span>
-          <span class="track-ts">190:46</span>
-        </li>
-        <li class="track">
-          <span class="track-num">42</span>
-          <span class="track-name">Chase the Sun - Musica Feliz Ibiza Beat Remix <em style="font-size:11px;color:var(--ink-muted)">David Tort, Norman Doray remix</em></span>
-          <span class="track-ts">196:04</span>
-        </li>
-        <li class="track">
-          <span class="track-num">43</span>
-          <span class="track-name">Meli (I) <em style="font-size:11px;color:var(--ink-muted)">BICEP</em></span>
-          <span class="track-ts">201:07</span>
-        </li>
-        <li class="track">
-          <span class="track-num">44</span>
-          <span class="track-name">Payback <em style="font-size:11px;color:var(--ink-muted)">Dimitri Vangelis &amp; Wyman</em></span>
-          <span class="track-ts">204:57</span>
-        </li>
-        <li class="track">
-          <span class="track-num">45</span>
-          <span class="track-name">Atomos VI <em style="font-size:11px;color:var(--ink-muted)">A Winged Victory for the Sullen</em></span>
-          <span class="track-ts">210:46</span>
-        </li>
-        <li class="track">
-          <span class="track-num">46</span>
-          <span class="track-name">Bent <em style="font-size:11px;color:var(--ink-muted)">Kiasmos</em></span>
-          <span class="track-ts">218:10</span>
-        </li>
-        <li class="track">
-          <span class="track-num">47</span>
-          <span class="track-name">hr 8938 cephei (ov) - Mr. Bill Remix <em style="font-size:11px;color:var(--ink-muted)">deadmau5, Mr. Bill Remix</em></span>
-          <span class="track-ts">223:55</span>
-        </li>
-        <li class="track">
-          <span class="track-num">48</span>
-          <span class="track-name">unjaded (ov) - Mad Zach Remix <em style="font-size:11px;color:var(--ink-muted)">deadmau5, Mad Zach Remix</em></span>
-          <span class="track-ts">228:46</span>
-        </li>
-        <li class="track">
-          <span class="track-num">49</span>
-          <span class="track-name">Re_Jaded <em style="font-size:11px;color:var(--ink-muted)">deadmau5 — carries through CH 10, The Machinery</em></span>
-          <span class="track-ts">232:50</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- CH11 -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">CH 11</span>
-        <span class="chapter-name">Dissolution</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">50</span>
-          <span class="track-name">Monophobia - Extended Mix <em style="font-size:11px;color:var(--ink-muted)">deadmau5, Rob Swire — Extended Mix, throughout</em></span>
-          <span class="track-ts">244:50</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- CH12 -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">CH 12</span>
-        <span class="chapter-name">Awakening</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">51</span>
-          <span class="track-name">Vanta Black - Instrumental <em style="font-size:11px;color:var(--ink-muted)">Benny L — Instrumental</em></span>
-          <span class="track-ts">254:50</span>
-        </li>
-        <li class="track">
-          <span class="track-num">52</span>
-          <span class="track-name">Who We Are - Cinemix <em style="font-size:11px;color:var(--ink-muted)">Luigi Lusini — Cinemix</em></span>
-          <span class="track-ts">260:16</span>
-        </li>
-        <li class="track">
-          <span class="track-num">53</span>
-          <span class="track-name">See <em style="font-size:11px;color:var(--ink-muted)">Nova Nova</em></span>
-          <span class="track-ts">263:07</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- CH13 -->
-    <div class="chapter">
-      <div class="chapter-header">
-        <span class="chapter-num">CH 13</span>
-        <span class="chapter-name">The Hum Continues</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">54</span>
-          <span class="track-name">II (Suspended Variations) <em style="font-size:11px;color:var(--ink-muted)">Tomasz Stańko Quartet</em></span>
-          <span class="track-ts">270:51</span>
-        </li>
-        <li class="track">
-          <span class="track-num">55</span>
-          <span class="track-name">Pin &amp; Needle <em style="font-size:11px;color:var(--ink-muted)">Sleepwalk With Luna</em></span>
-          <span class="track-ts">279:16</span>
-        </li>
-        <li class="track">
-          <span class="track-num">56</span>
-          <span class="track-name">Back to You <em style="font-size:11px;color:var(--ink-muted)">Shook</em></span>
-          <span class="track-ts">281:22</span>
-        </li>
-      </ul>
-    </div>
- 
-    <!-- POST-BOOK -->
-    <div class="chapter post">
-      <div class="chapter-header">
-        <span class="chapter-num">POST</span>
-        <span class="chapter-name">Outside the Sequence</span>
-      </div>
-      <ul class="track-list">
-        <li class="track">
-          <span class="track-num">57</span>
-          <span class="track-name">October <em style="font-size:11px;color:var(--ink-muted)">deadmau5</em></span>
-          <span class="track-ts">286:25</span>
-        </li>
-      </ul>
-    </div>
- 
+
   </section>
-  
-<div class="amazon-block">
-    <a href="https://www.amazon.com/Invariant-Aetheron/dp/B0H7FDDXTQ" target="_blank" rel="noopener">
-      <img src="available_at_amazon_en_horizontal.png" alt="Available at Amazon" />
-    </a>
-  </div>
-  
-  <footer>
-     <p>Invariant &nbsp;·&nbsp; Aetheron &nbsp;·&nbsp; 2026</p>
-    <br/>
-    <p>xetheron.com</p>
-  </footer>
 
 </body>
 </html>
